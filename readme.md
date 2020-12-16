@@ -10,7 +10,7 @@ SnakeEyes is a circuit board which conforms to the Raspberry Pi hat physical spe
  * Regulated power supply for LED's and Raspberry Pi main board
  * Connections for cooling fan
 
-![SnakeEyes main board photo](img/mainBoardGreen.jpg)
+![SnakeEyes main board photo](img/mainBoardGreen.png)
 
 ## What Is It Not?
 
