@@ -1,0 +1,22 @@
+{
+  "deviceName" : "SnakeEyes",
+  "deviceLogoPath" : "",
+  "supportURL" : "https://www.playingwithfusion.com/contactus.php",
+  "ledPins" : [ 13 ],
+  "ledSetCommand" : "",
+  "ledsCanDim" : true,
+  "ledPWMRange" : [ 0, 100 ],
+  "ledPWMSetRange" : "",
+  "ledPWMFrequency" : 0,
+  "ledDimCommand" : "",
+  "ledBlinkCommand" : "",
+  "statusRGBPins" : [ ],
+  "cpuTempCommand" : "",
+  "cpuMemoryCommand" : "",
+  "cpuUtilCommand" : "",
+  "gpuMemoryCommand" : "",
+  "gpuTempCommand" : "",
+  "ramUtilCommand" : "",
+  "restartHardwareCommand" : "",
+  "vendorFOV" : -1.0
+}
