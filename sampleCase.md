@@ -8,7 +8,7 @@ SnakeEyes must be contained within a case for proper functionality. The case mus
 
 [This case design](https://cad.onshape.com/documents/f103c7ef3fd26794c458b982/w/31e132f18a5a8b15dab352ca/e/fb93b9d1fb39f2f70ae6d80d) is provided as a reference, 3d-printable design for using the SnakeEyes with a Raspberry Pi 3b, 3b+, and 4b.
 
-![SnakeEyes Render](img/render_8.jpg)
+[A video with assembly instructions is provided.](https://youtu.be/iXhFbSNitfY).
 
 Printing in PLA and PETG has been tested. 
 
