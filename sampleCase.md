@@ -16,10 +16,10 @@ Printing in PLA and PETG has been tested.
 
 You will need to export and print the following:
 
- * 1x `Bottom`
- * 1x `Top`
- * 4x `Main Board Spacer`
- * 1x `Camera Board Spacer Plate`
+ * [1x `Bottom`](https://github.com/PlayingWithFusion/SnakeEyesDocs/blob/master/Parts%20-%20Bottom.stl)
+ * [1x `Top`](https://github.com/PlayingWithFusion/SnakeEyesDocs/blob/master/Parts%20-%20Top.stl)
+ * [4x `Main Board Spacer`](https://github.com/PlayingWithFusion/SnakeEyesDocs/blob/master/Parts%20-%20Main%20Board%20Spacer.stl)
+ * [1x `Camera Board Spacer Plate`](https://github.com/PlayingWithFusion/SnakeEyesDocs/blob/master/Parts%20-%20Camera%20Board%20Spacer%20Plate.stl)
 
 ## Case Additional Components
 
