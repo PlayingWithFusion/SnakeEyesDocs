@@ -23,9 +23,14 @@ import cv2
 
 # FRC Network Tables 
 from networktables import *
-import ntcore
 
 # GPIO Pin Manipulation
+# Note this library only does software PWM, 
+# so you may see flickering. So far it hasn't impacted
+# vision performance.
+# The alternate is to install and use the pigpio or RPIO libraries
+# for python, or some alternate mechanism which leverages
+# the Pi's hardware PWM to get more stable dimming.
 import RPi.GPIO as GPIO
 
 
@@ -50,7 +55,7 @@ MAX_PIXEL_BRIGHTNESS = 255
 MIN_CONTOUR_WIDTH_PX = 15
 MIN_CONTOUR_AREA_PX  = 20
 
-# Control how birght the LED's are set to
+# Control how bright the LED's are set to
 # 0.0 = Off, 1.0 = full on.
 LED_BRIGHTNESS = 0.25
 
@@ -192,9 +197,9 @@ class SnakeEyesBoardControl():
 
     def __init__(self):
         self.pwmNormCMD = 0
-        GPIO.setmode(GPIO.BOARD)
+        GPIO.setmode(GPIO.BCM)
         GPIO.setup(self.LED_PWM_DIM_PIN, GPIO.OUT)
-        self.ledCtrl = GPIO.PWM(self.LED_PWM_DIM_PIN,8000)
+        self.ledCtrl = GPIO.PWM(self.LED_PWM_DIM_PIN,800)
         self.ledCtrl.start(0)
 
     def _update(self):
@@ -429,7 +434,7 @@ if __name__ == "__main__":
 
     # Start up the results-view web server
     try:
-        server = ThreadedHTTPServer(('frcvision.local', 5805), CamHandler)
+        server = ThreadedHTTPServer(('wpilibpi.local', 5805), CamHandler)
         t = threading.Thread(target=server.serve_forever)
         t.start()
     except KeyboardInterrupt:
