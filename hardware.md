@@ -58,9 +58,7 @@ If you are using the Red IR version of SnakeEyes, it is highly recommended to us
 
 ## LED Control
 
-LED brightness is controlled by the Raspberry Pi pin 13. Configure the pin as an output, sending a 5kHz-8kHz square wave. Vary the duty cycle from 0% to 100% to change LED brightness.
-
-A python example of doing this is contained inside [the FRCVision software sample](FRCVision/snakeEyesVision.py)
+LED brightness is controlled by the Raspberry Pi pin GPIO 13. Configure the pin as an output, sending a 5kHz-8kHz square wave. Vary the duty cycle from 0% to 100% to change LED brightness.
 
 ## Fan
 

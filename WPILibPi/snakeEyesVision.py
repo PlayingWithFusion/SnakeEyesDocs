@@ -3,10 +3,10 @@
 # Copyright (c) 2020 Playing With Fusion. See license.txt for more info.
 #
 # This is a sample python program for configuring and using the NoIR Camera
-# with the FRCVision Raspberry Pi Image and Playing With Fusion's infrared
+# with the WPILibPi Raspberry Pi Image and Playing With Fusion's infrared
 # LED hat. 
 #
-# Results of the processing are visible at http://frcvision.local:5805/stream.html
+# Results of the processing are visible at http://wpilibpi.local:5805/stream.html
 # and in Network Tables.
 #----------------------------------------------------------------------------
 
