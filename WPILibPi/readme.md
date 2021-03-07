@@ -10,7 +10,7 @@ This procedure was last tested with the v2021.2.1 release of WPILib Pi.
 
 ## Code
 
-Download a copy of the sample [`snakeEyesVision.py`](https://raw.githubusercontent.com/PlayingWithFusion/SnakeEyesDocs/master/FRCVision/snakeEyesVision.py) script. Modify the `TEAM_NUMBER` variable to match your team, along with other configuration as needed.
+Download a copy of the sample [`snakeEyesVision.py`](https://raw.githubusercontent.com/PlayingWithFusion/SnakeEyesDocs/master/WPILibPi/snakeEyesVision.py) script. Modify the `TEAM_NUMBER` variable to match your team, along with other configuration as needed.
 
 ## Upload
 
