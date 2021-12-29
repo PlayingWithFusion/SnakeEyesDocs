@@ -54,3 +54,7 @@ echo "  * PhotonVision .jar version ${PHOTONVISION_RELEASE_TAG}" >> release_note
 echo "  * PhotonVision base Raspberry Pi image version ${PI_BASE_IMG_TAG}" >> release_notes.txt
 echo "  * SnakeEyes Hardware support files from ${VENDOR_RELEASE}" >> release_notes.txt
 echo "" >> release_notes.txt
+
+
+# Zip up .stl's for release
+zip -r case/*.stl 3dprinted_case.zip
