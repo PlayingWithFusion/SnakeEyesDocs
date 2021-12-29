@@ -14,9 +14,9 @@ All the reset of the [PhotonVision docs](https://docs.photonvision.org/en/latest
 
 Successful flashing should allow you to see and control the LED brightness from the PhotonVision Settings page:
 
-![hardware config](img/pv_hwcfg.png)
+![hardware config](/img/pv_hwcfg.png)
 
-![LED slider](img/pv_leds.png)
+![LED slider](/img/pv_leds.png)
 
 # Technical Details
 
