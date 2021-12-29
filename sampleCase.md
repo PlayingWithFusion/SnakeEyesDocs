@@ -1,7 +1,7 @@
 # Case
 
 [This case design](https://cad.onshape.com/documents/f103c7ef3fd26794c458b982/w/31e132f18a5a8b15dab352ca/e/fb93b9d1fb39f2f70ae6d80d) is provided as a reference, 3d-printable design for using the SnakeEyes with a Raspberry Pi 3b, 3b+, and 4b. 
-[A video with assembly instructions is provided.](https://youtu.be/iXhFbSNitfY).
+[A video with assembly instructions is provided](https://youtu.be/iXhFbSNitfY).
 
 ## BOM
 
