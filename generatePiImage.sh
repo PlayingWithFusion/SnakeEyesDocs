@@ -35,7 +35,7 @@ cd photonvision_config
 sudo cp ${HW_CFG_FILE_NAME} hardwareConfig.json
 
 # Update hardware configuration in place to indicate what release this was
-sed -i 's/VENDOR_RELEASE/${VENDOR_RELEASE}/g' hardwareConfig.json
+sudo sed -i 's/VENDOR_RELEASE/${VENDOR_RELEASE}/g' hardwareConfig.json
 
 # Cleanup
 popd
