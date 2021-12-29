@@ -6,7 +6,7 @@ SnakeEyes must be contained within a case for proper functionality. The case mus
    * Without this, spill light from the LED's will wash out the image, and made target identification very hard.
 * Protect the electronics 
 
-[This case design](https://cad.onshape.com/documents/f103c7ef3fd26794c458b982/w/31e132f18a5a8b15dab352ca/e/fb93b9d1fb39f2f70ae6d80d) is provided as a reference, 3d-printable design for using the SnakeEyes with a Raspberry Pi 3b, 3b+, and 4b.
+[This case design](https://cad.onshape.com/documents/f103c7ef3fd26794c458b982/w/31e132f18a5a8b15dab352ca/e/fb93b9d1fb39f2f70ae6d80d) is provided as a reference, 3d-printable design for using the SnakeEyes with a Raspberry Pi 3b, 3b+, and 4b. [Download a .zip of the 3d printer reference files here.](https://github.com/PlayingWithFusion/SnakeEyesDocs/releases/latest)
 
 [A video with assembly instructions is provided.](https://youtu.be/iXhFbSNitfY).
 
@@ -14,12 +14,12 @@ Printing in PLA and PETG has been tested.
 
 > :warning: Be sure to choose a filament color which is opaque to the wavelengths of light being used. Black is a good choice.
 
-You will need to export and print the following:
+After unzipping the .stl files, you will need to export and print the following:
 
- * [1x `Bottom`](https://github.com/PlayingWithFusion/SnakeEyesDocs/blob/master/Parts%20-%20Bottom.stl)
- * [1x `Top`](https://github.com/PlayingWithFusion/SnakeEyesDocs/blob/master/Parts%20-%20Top.stl)
- * [4x `Main Board Spacer`](https://github.com/PlayingWithFusion/SnakeEyesDocs/blob/master/Parts%20-%20Main%20Board%20Spacer.stl)
- * [1x `Camera Board Spacer Plate`](https://github.com/PlayingWithFusion/SnakeEyesDocs/blob/master/Parts%20-%20Camera%20Board%20Spacer%20Plate.stl)
+ * 1x `Bottom`
+ * 1x `Top`
+ * 4x `Main Board Spacer`
+ * 1x `Camera Board Spacer Plate`
 
 ## Case Additional Components
 
@@ -32,8 +32,6 @@ You will need to export and print the following:
 [The case above was designed to fit 25x25x10mm fans, like this one](https://www.amazon.com/gp/product/B01406OSNE/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1). 
 
 ## Assembly
-
-> :construction: Pictures coming soon!
 
 ### Electronics Prep
 
