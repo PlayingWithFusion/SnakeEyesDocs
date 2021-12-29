@@ -1,5 +1,5 @@
 {
-  "deviceName" : "SnakeEyes",
+  "deviceName" : "SnakeEyes_VENDOR_RELEASE",
   "deviceLogoPath" : "",
   "supportURL" : "https://www.playingwithfusion.com/contactus.php",
   "ledPins" : [ 13 ],

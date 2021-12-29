@@ -4,18 +4,21 @@
 
 # Getting Started
 
-[Download and flash the latest version of the PhotonVision Raspberry Pi Image per their instructions.](https://docs.photonvision.org/en/latest/docs/getting-started/installation/coprocessor-image.html#raspberry-pi-installation)
+[A pre-configured SnakeEyes image.zip](https://github.com/PlayingWithFusion/SnakeEyesDocs/releases/latest) is provided. 
 
-Power the system up, visit the web interface, and ensure you can see the Raspberry Pi camera as the only camera on the system, and can view its stream.
+First, download the image .zip file.
 
-Start by downloading a copy of this [`hardwareConfig.json`](https://raw.githubusercontent.com/PlayingWithFusion/SnakeEyesDocs/master/PhotonVision/hardwareConfig.json) file. It will configure PhotonVision to use pin 13 as the LED control pin.
+Then, flash your Raspberry Pi with this image, following [the instructions from PhotonVision.](https://docs.photonvision.org/en/latest/docs/getting-started/installation/coprocessor-image.html#raspberry-pi-installation)
 
-Go to the Settings tab, select "Import Settings", and upload the `hardwareConfig.json` file.
+All the reset of the [PhotonVision docs](https://docs.photonvision.org/en/latest/index.html) should apply as normal.
 
-The device should restart. After the restart is complete, refresh the webpage.
+Successful flashing should allow you to see and control the LED brightness from the PhotonVision Settings page:
 
-In the settings page, confirm the "Hardware Model" box now reads `SnakeEyes`. 
+![hardware config](/img/pv_hwcfg.png)
 
-Now, the "LEDs" Brightness slider on the settings page should control the LED brightness for SnakeEyes.
+![LED slider](/img/pv_leds.png)
 
-After this, all of of [PhotonVision's documentation](https://docs.photonvision.org/en/latest/index.html) applies as normal.
+# Technical Details
+
+The only modification to PhotonVision required to use SnakeEyes is to ensure the [`hardwareConfig.json`](hardwareConfig.json) file is updated to enable dimmable LED support on pin 13.
+
