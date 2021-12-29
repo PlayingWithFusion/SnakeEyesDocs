@@ -18,3 +18,7 @@ Successful flashing should allow you to see and control the LED brightness from 
 
 ![LED slider](img/pv_leds.png)
 
+# Technical Details
+
+The only modification to PhotonVision required to use SnakeEyes is to ensure the [`hardwareConfig.json`](hardwareConfig.json) file is updated to enable dimmable LED support on pin 13.
+

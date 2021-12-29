@@ -1,18 +1,30 @@
 # Case
 
-SnakeEyes must be contained within a case for proper functionality. The case must serve a few purposes:
-
- * Shield the camera from the LED's with opaque material
-   * Without this, spill light from the LED's will wash out the image, and made target identification very hard.
-* Protect the electronics 
-
-[This case design](https://cad.onshape.com/documents/f103c7ef3fd26794c458b982/w/31e132f18a5a8b15dab352ca/e/fb93b9d1fb39f2f70ae6d80d) is provided as a reference, 3d-printable design for using the SnakeEyes with a Raspberry Pi 3b, 3b+, and 4b. [Download a .zip of the 3d printer reference files here.](https://github.com/PlayingWithFusion/SnakeEyesDocs/releases/latest)
-
+[This case design](https://cad.onshape.com/documents/f103c7ef3fd26794c458b982/w/31e132f18a5a8b15dab352ca/e/fb93b9d1fb39f2f70ae6d80d) is provided as a reference, 3d-printable design for using the SnakeEyes with a Raspberry Pi 3b, 3b+, and 4b. 
 [A video with assembly instructions is provided.](https://youtu.be/iXhFbSNitfY).
 
-Printing in PLA and PETG has been tested. 
+## BOM
 
-> :warning: Be sure to choose a filament color which is opaque to the wavelengths of light being used. Black is a good choice.
+| No. | Description | Quantity | Example Source
+| --- | --- | --- | --- |
+| 1   | Assembled SnakeEyes Electronics |   | See [Hardware BOM](hardware.md)
+| 2   | 3d Printed Parts |   | See Below
+| 3   | M2.5x25 Bolt & Nut | 4 | Included, or [Kit from Amazon.com](https://www.amazon.com/gp/product/B082XPZV1V/)
+| 4   | 25x25x10mm Cooling Fan | 1 | [Set from Amazon.com](https://www.amazon.com/gp/product/B01406OSNE). 
+
+## Component Details
+
+### Headers
+
+This case is designed assuming headers with a 8.35mm plastic body height to provide proper separation between the SnakeEyes board and the Raspberry Pi case. Some "Raspberry-Pi" labeled headers have additional plastic layers which make them too tall for the case.
+
+![header_sizing.png](img/header_sizing.png)
+
+Additionally, the case does not have clearance to mount the external power connector on the top of the board. Soldering wires directly to the board is recommended.
+
+### 3d-Printed Parts
+
+[Download a .zip of the 3d printer reference files here.](https://github.com/PlayingWithFusion/SnakeEyesDocs/releases/latest)
 
 After unzipping the .stl files, you will need to export and print the following:
 
@@ -21,15 +33,9 @@ After unzipping the .stl files, you will need to export and print the following:
  * 4x `Main Board Spacer`
  * 1x `Camera Board Spacer Plate`
 
-## Case Additional Components
+If the LED's will be driven at full brightness, PETG or ABS is recommended to prevent warping from the heat. 
 
-### Bolts
-
-4x M2.5x25 bolts and nuts are required for assembly. [It was tested with this kit of bolts & nuts.](https://www.amazon.com/gp/product/B082XPZV1V/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1)
-
-### Fan
-
-[The case above was designed to fit 25x25x10mm fans, like this one](https://www.amazon.com/gp/product/B01406OSNE/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1). 
+> :warning: Be sure to choose a filament color which is opaque to the wavelengths of light being used. Black is a good choice. Red is a bad one for the IR lED's
 
 ## Assembly
 
