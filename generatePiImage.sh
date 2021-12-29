@@ -55,6 +55,5 @@ echo "  * PhotonVision base Raspberry Pi image version ${PI_BASE_IMG_TAG}" >> re
 echo "  * SnakeEyes Hardware support files from ${VENDOR_RELEASE}" >> release_notes.txt
 echo "" >> release_notes.txt
 
-
 # Zip up .stl's for release
-zip -r case/*.stl 3dprinted_case.zip
+zip -r snakeyes_case.zip case
