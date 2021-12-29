@@ -4,7 +4,7 @@ VENDOR_PREFIX=SnakeEyes
 VENDOR_RELEASE=${RELEASE_VERSION}
 
 # Install dependencies
-sudo apt install unzip zip
+sudo apt install unzip zip sed
 
 # Download new jar from photonvision main repo
 curl -sk https://api.github.com/repos/photonvision/photonvision/releases/tags/${PHOTONVISION_RELEASE_TAG} | grep "browser_download_url.*photonvision-.*\.jar" | cut -d : -f 2,3 | tr -d '"' | wget -qi -
@@ -33,6 +33,9 @@ sudo cp $JAR_FILE_NAME photonvision.jar
 sudo mkdir photonvision_config
 cd photonvision_config
 sudo cp ${HW_CFG_FILE_NAME} hardwareConfig.json
+
+# Update hardware configuration in place to indicate what release this was
+sed -i 's/VENDOR_RELEASE/${VENDOR_RELEASE}/g' hardwareConfig.json
 
 # Cleanup
 popd
