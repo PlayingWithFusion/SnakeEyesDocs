@@ -7,7 +7,7 @@ VENDOR_RELEASE=${RELEASE_VERSION}
 sudo apt install unzip zip sed
 
 # Download new jar from photonvision main repo
-curl -sk https://api.github.com/repos/photonvision/photonvision/releases/tags/${PHOTONVISION_RELEASE_TAG} | grep "browser_download_url.*photonvision-.*\.jar" | cut -d : -f 2,3 | tr -d '"' | wget -qi -
+curl -sk https://api.github.com/repos/photonvision/photonvision/releases/tags/${PHOTONVISION_RELEASE_TAG} | grep "browser_download_url.*photonvision-.*raspi\.jar" | cut -d : -f 2,3 | tr -d '"' | wget -qi -
 JAR_FILE_NAME=$(realpath $(ls | grep photonvision-v.*\.jar))
 
 # Download base image from pigen repo
