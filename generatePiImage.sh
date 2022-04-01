@@ -1,5 +1,5 @@
 PI_BASE_IMG_TAG=v2021.1.4
-PHOTONVISION_RELEASE_TAG=v2022.1.6
+PHOTONVISION_RELEASE_TAG=v2022.2.0
 VENDOR_PREFIX=SnakeEyes
 VENDOR_RELEASE=${RELEASE_VERSION}
 
@@ -29,7 +29,7 @@ pushd .
 cd $TMP/opt/photonvision
 sudo cp $JAR_FILE_NAME photonvision.jar
 
-# Copy in custom hardware configuration 
+# Copy in custom hardware configuration
 sudo mkdir photonvision_config
 cd photonvision_config
 sudo cp ${HW_CFG_FILE_NAME} hardwareConfig.json
