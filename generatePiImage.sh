@@ -5,7 +5,7 @@ VENDOR_RELEASE=${RELEASE_VERSION}
 
 # Install dependencies
 echo "Updating Dependencies..."
-sudo apt install xz-utils sed
+sudo apt install xz-utils sed zip
 
 # Download new jar from photonvision main repo
 echo "Downloading specified photonvision .jar..."
@@ -50,8 +50,7 @@ sudo rmdir ${TMP}
 NEW_IMAGE=$(basename "${VENDOR_PREFIX}-${VENDOR_RELEASE}.img")
 mv $IMAGE_FILE $NEW_IMAGE
 xz -v -z $NEW_IMAGE
-$NEW_IMAGE += .xz
-mv $NEW_IMAGE $(basename "${VENDOR_PREFIX}-${VENDOR_RELEASE}-image.xz")
+mv $NEW_IMAGE.xz $(basename "${VENDOR_PREFIX}-${VENDOR_RELEASE}-image.xz")
 
 echo "Cleaning up..."
 rm $JAR_FILE_NAME
@@ -67,6 +66,5 @@ echo "  * SnakeEyes Hardware support files from ${VENDOR_RELEASE}" >> release_no
 echo "" >> release_notes.txt
 
 # Compress .stl's for release
-xz -v -z case
-mv case.xz snakeyes_case.xz
-rm case.xz
+zip -r snakeyes_case.zip case
+
