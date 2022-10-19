@@ -31,7 +31,7 @@ jobs:
 
       - uses: softprops/action-gh-release@v1
         with:
-          files: '**/*.zip'
+          files: '**/*.xz'
           body_path: release_notes.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

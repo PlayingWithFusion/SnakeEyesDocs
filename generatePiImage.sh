@@ -4,22 +4,22 @@ VENDOR_PREFIX=SnakeEyes
 VENDOR_RELEASE=${RELEASE_VERSION}
 
 # Install dependencies
-sudo apt install unzip zip sed
+sudo apt install xz sed
 
 # Download new jar from photonvision main repo
 curl -sk https://api.github.com/repos/photonvision/photonvision/releases/tags/${PHOTONVISION_RELEASE_TAG} | grep "browser_download_url.*photonvision-.*raspi\.jar" | cut -d : -f 2,3 | tr -d '"' | wget -qi -
 JAR_FILE_NAME=$(realpath $(ls | grep photonvision-v.*\.jar))
 
 # Download base image from pigen repo
-curl -sk https://api.github.com/repos/photonvision/photon-pi-gen/releases/tags/${PI_BASE_IMG_TAG} | grep "browser_download_url.*zip" | cut -d : -f 2,3 | tr -d '"' | wget -qi -
-IMG_FILE_NAME=$(realpath $(ls | grep image_*.zip))
+curl -sk https://api.github.com/repos/photonvision/photon-pi-gen/releases/tags/${PI_BASE_IMG_TAG} | grep "browser_download_url.*xz" | cut -d : -f 2,3 | tr -d '"' | wget -qi -
+IMG_FILE_NAME=$(realpath $(ls | grep image_*.xz))
 
 # Config files should be in this repo
 HW_CFG_FILE_NAME=$(realpath $(find PhotonVision -name hardwareConfig.json))
 
 # Unzip and mount the image to be updated
-unzip $IMG_FILE_NAME
-IMAGE_FILE=$(ls | grep *.img)
+xz --decompress $IMG_FILE_NAME
+IMAGE_FILE=$(ls | grep *.xz)
 TMP=$(mktemp -d)
 LOOP=$(sudo losetup --show -fP "${IMAGE_FILE}")
 sudo mount ${LOOP}p2 $TMP
@@ -43,7 +43,9 @@ sudo umount ${TMP}
 sudo rmdir ${TMP}
 NEW_IMAGE=$(basename "${VENDOR_PREFIX}-${VENDOR_RELEASE}.img")
 mv $IMAGE_FILE $NEW_IMAGE
-zip -r $(basename "${VENDOR_PREFIX}-${VENDOR_RELEASE}-image.zip") $NEW_IMAGE
+xz -z $NEW_IMAGE
+$NEW_IMAGE += .xz
+mv $NEW_IMAGE $(basename "${VENDOR_PREFIX}-${VENDOR_RELEASE}-image.xz")
 ls
 rm $NEW_IMAGE
 rm $JAR_FILE_NAME
@@ -58,5 +60,7 @@ echo "  * PhotonVision base Raspberry Pi image version ${PI_BASE_IMG_TAG}" >> re
 echo "  * SnakeEyes Hardware support files from ${VENDOR_RELEASE}" >> release_notes.txt
 echo "" >> release_notes.txt
 
-# Zip up .stl's for release
-zip -r snakeyes_case.zip case
+# Compress .stl's for release
+xz -z case
+mv case.xz snakeyes_case.xz
+rm case.xz
