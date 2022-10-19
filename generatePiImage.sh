@@ -9,12 +9,12 @@ sudo apt install xz-utils sed
 
 # Download new jar from photonvision main repo
 echo "Downloading specified photonvision .jar..."
-curl -sk https://api.github.com/repos/photonvision/photonvision/releases/tags/${PHOTONVISION_RELEASE_TAG} | grep "browser_download_url.*photonvision-.*raspi\.jar" | cut -d : -f 2,3 | tr -d '"' | wget -qi -
+curl -v -sk https://api.github.com/repos/photonvision/photonvision/releases/tags/${PHOTONVISION_RELEASE_TAG} | grep "browser_download_url.*photonvision-.*raspi\.jar" | cut -d : -f 2,3 | tr -d '"' | wget -qi -
 JAR_FILE_NAME=$(realpath $(ls | grep photonvision-v.*\.jar))
 
 # Download base image from pigen repo
 echo "Downloading specified base pi image..."
-curl -sk https://api.github.com/repos/photonvision/photon-pi-gen/releases/tags/${PI_BASE_IMG_TAG} | grep "browser_download_url.*xz" | cut -d : -f 2,3 | tr -d '"' | wget -qi -
+curl -v -sk https://api.github.com/repos/photonvision/photon-pi-gen/releases/tags/${PI_BASE_IMG_TAG} | grep "browser_download_url.*xz" | cut -d : -f 2,3 | tr -d '"' | wget -qi -
 IMG_FILE_NAME=$(realpath $(ls | grep image_*.xz))
 
 # Config files should be in this repo
@@ -22,7 +22,7 @@ HW_CFG_FILE_NAME=$(realpath $(find PhotonVision -name hardwareConfig.json))
 
 # Unzip and mount the image to be updated
 echo "Unzipping and mounting pi image..."
--v --decompress $IMG_FILE_NAME
+xz -v --decompress $IMG_FILE_NAME
 IMAGE_FILE=$(ls | grep *.img)
 TMP=$(mktemp -d)
 LOOP=$(sudo losetup --show -fP "${IMAGE_FILE}")
