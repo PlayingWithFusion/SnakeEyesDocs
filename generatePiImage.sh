@@ -54,7 +54,6 @@ mv $NEW_IMAGE.xz $(basename "${VENDOR_PREFIX}-${VENDOR_RELEASE}-image.xz")
 
 echo "Cleaning up..."
 rm $JAR_FILE_NAME
-rm $IMG_FILE_NAME
 
 # make some release notes
 touch release_notes.txt
