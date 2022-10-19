@@ -22,7 +22,7 @@ HW_CFG_FILE_NAME=$(realpath $(find PhotonVision -name hardwareConfig.json))
 
 # Unzip and mount the image to be updated
 echo "Unzipping and mounting pi image..."
-xz --decompress $IMG_FILE_NAME
+-v --decompress $IMG_FILE_NAME
 IMAGE_FILE=$(ls | grep *.img)
 TMP=$(mktemp -d)
 LOOP=$(sudo losetup --show -fP "${IMAGE_FILE}")
@@ -49,7 +49,7 @@ sudo umount ${TMP}
 sudo rmdir ${TMP}
 NEW_IMAGE=$(basename "${VENDOR_PREFIX}-${VENDOR_RELEASE}.img")
 mv $IMAGE_FILE $NEW_IMAGE
-xz -z $NEW_IMAGE
+xz -v -z $NEW_IMAGE
 $NEW_IMAGE += .xz
 mv $NEW_IMAGE $(basename "${VENDOR_PREFIX}-${VENDOR_RELEASE}-image.xz")
 
@@ -67,6 +67,6 @@ echo "  * SnakeEyes Hardware support files from ${VENDOR_RELEASE}" >> release_no
 echo "" >> release_notes.txt
 
 # Compress .stl's for release
-xz -z case
+xz -v -z case
 mv case.xz snakeyes_case.xz
 rm case.xz
