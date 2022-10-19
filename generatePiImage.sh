@@ -4,13 +4,16 @@ VENDOR_PREFIX=SnakeEyes
 VENDOR_RELEASE=${RELEASE_VERSION}
 
 # Install dependencies
+echo "Updating Dependencies..."
 sudo apt install xz-utils sed
 
 # Download new jar from photonvision main repo
+echo "Downloading specified photonvision .jar..."
 curl -sk https://api.github.com/repos/photonvision/photonvision/releases/tags/${PHOTONVISION_RELEASE_TAG} | grep "browser_download_url.*photonvision-.*raspi\.jar" | cut -d : -f 2,3 | tr -d '"' | wget -qi -
 JAR_FILE_NAME=$(realpath $(ls | grep photonvision-v.*\.jar))
 
 # Download base image from pigen repo
+echo "Downloading specified base pi image..."
 curl -sk https://api.github.com/repos/photonvision/photon-pi-gen/releases/tags/${PI_BASE_IMG_TAG} | grep "browser_download_url.*xz" | cut -d : -f 2,3 | tr -d '"' | wget -qi -
 IMG_FILE_NAME=$(realpath $(ls | grep image_*.xz))
 
@@ -18,14 +21,16 @@ IMG_FILE_NAME=$(realpath $(ls | grep image_*.xz))
 HW_CFG_FILE_NAME=$(realpath $(find PhotonVision -name hardwareConfig.json))
 
 # Unzip and mount the image to be updated
+echo "Unzipping and mounting pi image..."
 xz --decompress $IMG_FILE_NAME
-IMAGE_FILE=$(ls | grep *.xz)
+IMAGE_FILE=$(ls | grep *.img)
 TMP=$(mktemp -d)
 LOOP=$(sudo losetup --show -fP "${IMAGE_FILE}")
 sudo mount ${LOOP}p2 $TMP
 pushd .
 
 # Copy in the new .jar
+echo "Copying in vendor support files..."
 cd $TMP/opt/photonvision
 sudo cp $JAR_FILE_NAME photonvision.jar
 
@@ -38,6 +43,7 @@ sudo cp ${HW_CFG_FILE_NAME} hardwareConfig.json
 sudo sed -i 's/VENDOR_RELEASE/'"${VENDOR_RELEASE}"'/g' hardwareConfig.json
 
 # Cleanup
+echo "Re-zipping updated image..."
 popd
 sudo umount ${TMP}
 sudo rmdir ${TMP}
@@ -46,8 +52,8 @@ mv $IMAGE_FILE $NEW_IMAGE
 xz -z $NEW_IMAGE
 $NEW_IMAGE += .xz
 mv $NEW_IMAGE $(basename "${VENDOR_PREFIX}-${VENDOR_RELEASE}-image.xz")
-ls
-rm $NEW_IMAGE
+
+echo "Cleaning up..."
 rm $JAR_FILE_NAME
 rm $IMG_FILE_NAME
 
