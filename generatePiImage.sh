@@ -4,7 +4,7 @@ VENDOR_PREFIX=SnakeEyes
 VENDOR_RELEASE=${RELEASE_VERSION}
 
 # Install dependencies
-sudo apt install xz sed
+sudo apt install xz-utils sed
 
 # Download new jar from photonvision main repo
 curl -sk https://api.github.com/repos/photonvision/photonvision/releases/tags/${PHOTONVISION_RELEASE_TAG} | grep "browser_download_url.*photonvision-.*raspi\.jar" | cut -d : -f 2,3 | tr -d '"' | wget -qi -
