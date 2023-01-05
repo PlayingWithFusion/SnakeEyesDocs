@@ -1,5 +1,5 @@
-PI_BASE_IMG_TAG=v2023.1.0-beta-1
-PHOTONVISION_RELEASE_TAG=v2023.1.1-beta-5
+PI_BASE_IMG_TAG=v2023.1.0-beta-4_arm64
+PHOTONVISION_RELEASE_TAG=v2023.1.1-beta-8
 VENDOR_PREFIX=SnakeEyes
 VENDOR_RELEASE=${RELEASE_VERSION}
 
@@ -9,7 +9,7 @@ sudo apt install xz-utils sed zip
 
 # Download new jar from photonvision main repo
 echo "Downloading specified photonvision .jar..."
-curl -v -sk https://api.github.com/repos/photonvision/photonvision/releases/tags/${PHOTONVISION_RELEASE_TAG} | grep "browser_download_url.*photonvision-.*raspi\.jar" | cut -d : -f 2,3 | tr -d '"' | wget -qi -
+curl -v -sk https://api.github.com/repos/photonvision/photonvision/releases/tags/${PHOTONVISION_RELEASE_TAG} | grep "browser_download_url.*photonvision-.*linuxarm64\.jar" | cut -d : -f 2,3 | tr -d '"' | wget -qi -
 JAR_FILE_NAME=$(realpath $(ls | grep photonvision-v.*\.jar))
 
 # Download base image from pigen repo
@@ -33,6 +33,26 @@ pushd .
 echo "Copying in vendor support files..."
 cd $TMP/opt/photonvision
 sudo cp $JAR_FILE_NAME photonvision.jar
+
+echo "Jar updated! Creating service..."
+
+pushd .
+cd $TMP/etc/systemd/system/multi-user.target.wants
+sudo bash -c "printf \
+\"[Unit]
+Description=Service that runs PhotonVision
+
+[Service]
+WorkingDirectory=/opt/photonvision
+ExecStart=/usr/bin/java -Xmx512m -jar /opt/photonvision/photonvision.jar
+ExecStop=/bin/systemctl kill photonvision
+Type=simple
+Restart=on-failure
+RestartSec=1
+
+[Install]
+WantedBy=multi-user.target\" > photonvision.service"
+popd
 
 # Copy in custom hardware configuration 
 sudo mkdir photonvision_config
