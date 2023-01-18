@@ -14,6 +14,6 @@ It is the preferred approach for software to interact with SnakeEyes.
 
 ### WPILibPi
 
-[WPILib provides a raspberry Pi image with many common utilities pre-installed](https://docs.wpilib.org/en/stable/docs/software/vision-processing/raspberry-pi/index.html).
+[WPILib provides a raspberry Pi image with many common utilities pre-installed](https://docs.photonvision.org/en/latest/docs/getting-started/installation/sw_install/snakeyes.html).
 
 [Click here for documentation on using SnakeEyes with the WPILibPi Image](WPILibPi/readme.md) 
