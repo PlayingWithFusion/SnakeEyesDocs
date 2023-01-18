@@ -3,7 +3,7 @@
 
 This page describes the minimum additional hardware required to enable all functionality of the SnakeEyes board.
 
-> :warning: If you are using the [Sample Case Design](sampleCase.md), be sure to read that page too - it has additional components and requirements above and beyond these minimum requirements.
+> :warning: If you are using the [Sample Case Design](case/v1/sampleCase.md), be sure to read that page too - it has additional components and requirements above and beyond these minimum requirements.
 
 ## BOM
 
@@ -17,7 +17,7 @@ This page describes the minimum additional hardware required to enable all funct
 | 6   | M2x10mm screws | 4 | [Set from Amazon.com](https://www.amazon.com/uxcell-M2x10mm-Phillips-Stainless-Fasteners/dp/B07LGWJ9LJ/)
 | 7   | Short Camera Cable | 1 | [Set from Amazon.com](https://www.amazon.com/Pastall-Raspberry-15cm%C3%972pcs-30cm%C3%972pcs-50cm%C3%972pcs/dp/B089LM5D1T)
 | 8   | 12v cooling fan | 1 | [Set from Amazon.com](https://www.amazon.com/gp/product/B01406OSNE)
-| 9   | Case | 1 | [Sample Case Design](sampleCase.md), or create your own.
+| 9   | Case | 1 | [Sample Case Design](case/v1/sampleCase.md), one of the v2 designs, or create your own.
 
 ## Component Details
 

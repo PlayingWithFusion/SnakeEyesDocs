@@ -30,5 +30,5 @@ This guide seeks to further help by providing a few known-good paths to success.
 
  1. [Video Introduction to the Product](https://www.youtube.com/watch?v=mmTHJN22qKk&feature=youtu.be)
  2. [Required Additional Hardware](hardware.md)
- 3. [Sample 3D Printed Case Design](sampleCase.md) 
+ 3. [Sample 3D Printed Case Designs](case/)
  4. [Sample Software Options](sampleSoftware.md)

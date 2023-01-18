@@ -1,5 +1,5 @@
 PI_BASE_IMG_TAG=v2023.1.0-beta-4_arm64
-PHOTONVISION_RELEASE_TAG=v2023.1.1-beta-8
+PHOTONVISION_RELEASE_TAG=v2023.1.2
 VENDOR_PREFIX=SnakeEyes
 VENDOR_RELEASE=${RELEASE_VERSION}
 
@@ -83,7 +83,4 @@ echo "  * PhotonVision .jar version ${PHOTONVISION_RELEASE_TAG}" >> release_note
 echo "  * PhotonVision base Raspberry Pi image version ${PI_BASE_IMG_TAG}" >> release_notes.txt
 echo "  * SnakeEyes Hardware support files from ${VENDOR_RELEASE}" >> release_notes.txt
 echo "" >> release_notes.txt
-
-# Compress .stl's for release
-zip -r snakeyes_case.zip case
 
