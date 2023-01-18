@@ -18,7 +18,7 @@
 
 This case is designed assuming headers with a 8.35mm plastic body height to provide proper separation between the SnakeEyes board and the Raspberry Pi case. Some "Raspberry-Pi" labeled headers have additional plastic layers which make them too tall for the case.
 
-![header_sizing.png](img/header_sizing.png)
+![header_sizing.png](/img/header_sizing.png)
 
 Confirm whether your case has clearance to mount the external power connector on the top of the board. Soldering wires directly to the board or on the underside are alternatives if not.
 
