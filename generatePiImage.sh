@@ -1,5 +1,7 @@
-PI_BASE_IMG_TAG=v2023.1.0-beta-4_arm64
-PHOTONVISION_RELEASE_TAG=v2023.1.2
+#!/bin/bash
+
+PI_BASE_IMG_TAG=v2023.1.3_arm64
+PHOTONVISION_RELEASE_TAG=v2023.4.2
 VENDOR_PREFIX=SnakeEyes
 VENDOR_RELEASE=${RELEASE_VERSION}
 
@@ -54,7 +56,7 @@ RestartSec=1
 WantedBy=multi-user.target\" > photonvision.service"
 popd
 
-# Copy in custom hardware configuration 
+# Copy in custom hardware configuration
 sudo mkdir photonvision_config
 cd photonvision_config
 sudo cp ${HW_CFG_FILE_NAME} hardwareConfig.json
