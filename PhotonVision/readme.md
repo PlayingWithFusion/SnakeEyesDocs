@@ -6,9 +6,6 @@
 
 First, download the hardware config file, `hardwareConfig.json`. [Click this link](https://raw.githubusercontent.com/PlayingWithFusion/SnakeEyesDocs/master/PhotonVision/hardwareConfig.json), then save the file.
 
-<a id="raw-url" href="https://raw.githubusercontent.com/PlayingWithFusion/SnakeEyesDocs/master/PhotonVision/hardwareConfig.json">Download the file from here</a>
-
-
 [Follow the instructions for installing PhotonVision.](https://docs.photonvision.org/en/latest/docs/getting-started/installation/coprocessor-image.html#raspberry-pi-installation)
 
 Go to `http://photonvision.local:5800/settings.html`, select Import Settings, and upload `hardwareConfig.json`.
