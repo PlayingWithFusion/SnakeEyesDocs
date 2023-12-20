@@ -4,15 +4,15 @@
 
 # Getting Started
 
-[A pre-configured SnakeEyes image.zip](https://github.com/PlayingWithFusion/SnakeEyesDocs/releases/latest) is provided. 
+First, [download the hardware config file, `hardwareConfig.json`](hardwareConfig.json).
 
-First, download the image .zip file.
+[Follow the instructions for installing PhotonVision.](https://docs.photonvision.org/en/latest/docs/getting-started/installation/coprocessor-image.html#raspberry-pi-installation)
 
-Then, flash your Raspberry Pi with this image, following [the instructions from PhotonVision.](https://docs.photonvision.org/en/latest/docs/getting-started/installation/coprocessor-image.html#raspberry-pi-installation)
+Go to `http://photonvision.local:5800/settings.html`, select Import Settings, and upload `hardwareConfig.json`.
 
 All the reset of the [PhotonVision docs](https://docs.photonvision.org/en/latest/index.html) should apply as normal.
 
-Successful flashing should allow you to see and control the LED brightness from the PhotonVision Settings page:
+Successful configuration should allow you to see and control the LED brightness from the PhotonVision Settings page:
 
 ![hardware config](/img/pv_hwcfg.png)
 
