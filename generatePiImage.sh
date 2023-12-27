@@ -20,7 +20,7 @@ curl -v -sk https://api.github.com/repos/photonvision/photon-pi-gen/releases/tag
 IMG_FILE_NAME=$(realpath $(ls | grep image_*.xz))
 
 # Config files should be in this repo
-HW_CFG_FILE_NAME=$(realpath $(find PhotonVision -name hardwareConfig.json))
+HW_CFG_FILE_NAME=$(realpath $(find PhotonVision -name photon.sqlite))
 
 # Unzip and mount the image to be updated
 echo "Unzipping and mounting pi image..."
@@ -59,10 +59,11 @@ popd
 # Copy in custom hardware configuration
 sudo mkdir photonvision_config
 cd photonvision_config
-sudo cp ${HW_CFG_FILE_NAME} hardwareConfig.json
+sudo cp ${HW_CFG_FILE_NAME} photon.sqlite
 
 # Update hardware configuration in place to indicate what release this was
-sudo sed -i 's/VENDOR_RELEASE/'"${VENDOR_RELEASE}"'/g' hardwareConfig.json
+# TODO - I can't sql yet
+# sudo sed -i 's/VENDOR_RELEASE/'"${VENDOR_RELEASE}"'/g' hardwareConfig.json
 
 # Cleanup
 echo "Re-zipping updated image..."
